@@ -1,71 +1,65 @@
-'use client';
+import { Container } from '@/components/ui/Container'
+import { Section } from '@/components/ui/Section'
+import { Badge } from '@/components/ui/Badge'
+import { FadeIn } from '@/components/ui/FadeIn'
+import { CogIcon, LinkIcon, BotIcon, GlobeIcon, CheckIcon } from '@/components/ui/Icons'
+import { services, type Service } from '@/content/services'
 
-import React from 'react';
-import { Container } from '@/components/ui/Container';
-import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/Card';
-import { Badge } from '@/components/ui/Badge';
-import { services } from '@/content/services';
-import { 
-  Workflow, 
-  Plug, 
-  BarChart3, 
-  ShoppingCart, 
-  Lightbulb,
-  type LucideIcon 
-} from 'lucide-react';
+const iconMap = {
+  cog: CogIcon,
+  link: LinkIcon,
+  bot: BotIcon,
+  globe: GlobeIcon,
+} as const
 
-const iconMap: Record<string, LucideIcon> = {
-  workflow: Workflow,
-  plug: Plug,
-  chart: BarChart3,
-  'shopping-cart': ShoppingCart,
-  lightbulb: Lightbulb,
-};
+function ServiceCard({ service, index }: { service: Service; index: number }) {
+  const Icon = iconMap[service.icon]
+
+  return (
+    <FadeIn delay={index * 100}>
+      <div className="group relative h-full rounded-2xl border border-navy/8 bg-white p-8 transition-all duration-300 hover:border-cyan/30 hover:shadow-xl hover:-translate-y-1">
+        <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-blue to-cyan shadow-lg transition-transform duration-300 group-hover:scale-110">
+          <Icon className="w-7 h-7 text-white" />
+        </div>
+
+        <h3 className="mb-3 text-xl font-semibold text-navy">{service.title}</h3>
+        <p className="mb-6 text-sm leading-relaxed text-navy/60">{service.description}</p>
+
+        <ul className="space-y-2.5">
+          {service.features.map((feature) => (
+            <li key={feature} className="flex items-start gap-2 text-sm text-navy/70">
+              <CheckIcon className="w-4 h-4 text-cyan flex-shrink-0 mt-0.5" />
+              {feature}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </FadeIn>
+  )
+}
 
 export function Services() {
   return (
-    <section id="servicos" className="section-padding bg-white">
+    <Section id="servicos" className="bg-gray-light">
       <Container>
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <Badge className="mb-4">Nossos Serviços</Badge>
-          <h2 className="text-3xl md:text-4xl font-bold text-nexen-navy mb-4">
-            Soluções completas para seu negócio
-          </h2>
-          <p className="text-lg text-nexen-navy/70">
-            Oferecemos uma gama de serviços especializados para otimizar processos, 
-            conectar sistemas e impulsionar resultados.
-          </p>
-        </div>
+        <FadeIn>
+          <div className="mx-auto mb-16 max-w-2xl text-center">
+            <Badge>Serviços</Badge>
+            <h2 className="mt-4 text-3xl font-bold text-navy md:text-4xl">
+              Soluções que resolvem de verdade
+            </h2>
+            <p className="mt-4 text-lg text-navy/60">
+              Do diagnóstico à entrega, cada solução é pensada sob medida para o seu negócio.
+            </p>
+          </div>
+        </FadeIn>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service) => {
-            const Icon = iconMap[service.icon];
-            return (
-              <Card key={service.id} hover className="h-full">
-                <CardHeader>
-                  <div className="w-12 h-12 bg-gradient-to-br from-nexen-blue to-nexen-cyan rounded-lg flex items-center justify-center mb-4">
-                    {Icon && <Icon className="w-6 h-6 text-white" />}
-                  </div>
-                  <CardTitle>{service.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-nexen-navy/70 mb-4">{service.description}</p>
-                  <ul className="space-y-2">
-                    {service.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start space-x-2 text-sm">
-                        <div className="w-1.5 h-1.5 bg-nexen-blue rounded-full mt-2 flex-shrink-0" />
-                        <span className="text-nexen-navy/80">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            );
-          })}
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+          {services.map((service, idx) => (
+            <ServiceCard key={service.id} service={service} index={idx} />
+          ))}
         </div>
       </Container>
-    </section>
-  );
+    </Section>
+  )
 }

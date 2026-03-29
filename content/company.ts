@@ -1,22 +1,27 @@
 export const company = {
-  legalName: "NEXEN TECNOLOGIA LTDA", // TODO: Preencher com o nome do cartão CNPJ
-  tradeName: "NEXEN TECNOLOGIA",
-  cnpj: "62.710.896/0001-50", // TODO: Preencher com o CNPJ real
+  name: 'Nexen Tecnologia',
+  legalName: 'NEXEN TECNOLOGIA LTDA',
+  cnpj: '62.710.896/0001-50',
+  cnae: '62.01-5-01',
+  cnaeDescription: 'Desenvolvimento de software sob encomenda',
   address: {
-    street: "Q AOS 5 BLOCO C", // TODO: Preencher
-    city: "Brasília, Brasil", // TODO: Preencher
-    state: "DF", // TODO: Preencher
-    cep: "70660-053", // TODO: Preencher
+    street: 'Q AOS 5 BLOCO C',
+    city: 'Brasília',
+    state: 'DF',
+    zip: '70660-053',
+    country: 'Brasil',
+    full: 'Q AOS 5 BLOCO C, Brasília, DF 70660-053, Brasil',
   },
-  foundedAt: "15/09/2025", // TODO: Preencher com data de abertura
-  cnae: "62.01-5-01 - Desenvolvimento de programas de computador sob encomenda", // TODO: Preencher com CNAE real
+  founded: '15/09/2025',
   contact: {
-    email: "contato@nexentecnologia.com.br",
-    whatsapp: "+5561990229521", // TODO: Preencher
-    phone: "+5561990229521", // TODO: Preencher
+    email: 'contato@nexentecnologia.com.br',
+    whatsapp: '+5561990229521',
+    whatsappFormatted: '+55 61 9 9022-9521',
   },
   social: {
-    linkedin: undefined, // Opcional: adicione a URL quando criar
-    instagram: "https://instagram.com/nexentecnologia", // Opcional
-  }
-};
+    instagram: '@nexentecnologia',
+    instagramUrl: 'https://instagram.com/nexentecnologia',
+  },
+  site: 'nexentecnologia.com.br',
+  siteUrl: 'https://nexentecnologia.com.br',
+} as const

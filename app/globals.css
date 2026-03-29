@@ -1,45 +1,79 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-@layer base {
-  :root {
-    --font-sora: 'Sora', system-ui, sans-serif;
+@theme {
+  --color-navy: #000626;
+  --color-blue: #3360EF;
+  --color-cyan: #20BCED;
+  --color-gray-light: #EDEDED;
+
+  --font-sora: "Sora", sans-serif;
+}
+
+/* Base */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sora);
+  color: var(--color-navy);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Animations */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
   }
-  
-  * {
-    @apply border-nexen-navy/10;
-  }
-  
-  body {
-    @apply bg-white text-nexen-navy font-sora antialiased;
-  }
-  
-  html {
-    scroll-behavior: smooth;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@layer components {
-  .container-custom {
-    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
-  }
-  
-  .section-padding {
-    @apply py-16 md:py-24 lg:py-32;
-  }
-  
-  .gradient-bg-hero {
-    background: linear-gradient(135deg, #000626 0%, #3360EF 100%);
-  }
-  
-  .gradient-text {
-    @apply bg-gradient-to-r from-nexen-blue to-nexen-cyan bg-clip-text text-transparent;
-  }
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out both;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out both;
+}
+
+/* Stagger delays */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+
+/* Accordion */
+.accordion-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease;
+}
+
+.accordion-content[data-open="true"] {
+  grid-template-rows: 1fr;
+}
+
+.accordion-inner {
+  overflow: hidden;
+}
+
+/* Float animation for hero nodes */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+/* Gradient background for hero */
+.hero-gradient {
+  background: linear-gradient(135deg, var(--color-navy) 0%, #0a1847 50%, #111d5e 100%);
 }

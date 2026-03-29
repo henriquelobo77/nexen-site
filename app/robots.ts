@@ -1,13 +1,9 @@
-import { MetadataRoute } from 'next';
+import type { MetadataRoute } from 'next'
+import { company } from '@/content/company'
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = 'https://nexen.com.br'; // TODO: Atualizar com o domínio real
-
   return {
-    rules: {
-      userAgent: '*',
-      allow: '/',
-    },
-    sitemap: `${baseUrl}/sitemap.xml`,
-  };
+    rules: { userAgent: '*', allow: '/' },
+    sitemap: `${company.siteUrl}/sitemap.xml`,
+  }
 }

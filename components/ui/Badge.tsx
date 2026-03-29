@@ -1,28 +1,21 @@
-import React from 'react';
-import { cn } from '@/lib/utils';
+import { type ReactNode } from 'react'
 
 interface BadgeProps {
-  children: React.ReactNode;
-  variant?: 'default' | 'primary' | 'secondary';
-  className?: string;
+  children: ReactNode
+  variant?: 'default' | 'light'
 }
 
-export function Badge({ children, variant = 'default', className }: BadgeProps) {
-  const variants = {
-    default: 'bg-nexen-gray text-nexen-navy',
-    primary: 'bg-nexen-blue/10 text-nexen-blue',
-    secondary: 'bg-nexen-cyan/10 text-nexen-cyan',
-  };
-  
+export function Badge({ children, variant = 'default' }: BadgeProps) {
+  const styles =
+    variant === 'light'
+      ? 'bg-white/10 text-white/90 border-white/10'
+      : 'bg-blue/10 text-blue border-blue/20'
+
   return (
     <span
-      className={cn(
-        'inline-flex items-center px-3 py-1 rounded-full text-sm font-medium',
-        variants[variant],
-        className
-      )}
+      className={`inline-flex items-center gap-1.5 rounded-full border px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider ${styles}`}
     >
       {children}
     </span>
-  );
+  )
 }

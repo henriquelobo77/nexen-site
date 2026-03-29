@@ -1,135 +1,130 @@
-import React from 'react';
-import { Container } from '@/components/ui/Container';
-import { Mail, Phone, Linkedin, Instagram } from 'lucide-react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { company } from '@/content/company';
+import Link from 'next/link'
+import Image from 'next/image'
+import { Container } from '@/components/ui/Container'
+import { WhatsAppIcon, MailIcon, InstagramIcon } from '@/components/ui/Icons'
+import { company } from '@/content/company'
+
+const footerLinks = [
+  { label: 'Serviços', href: '/#servicos' },
+  { label: 'Processo', href: '/#processo' },
+  { label: 'Diferenciais', href: '/#diferenciais' },
+  { label: 'Nexen Beauty', href: '/nexen-beauty' },
+  { label: 'Contato', href: '/#contato' },
+]
+
+const legalLinks = [
+  { label: 'Política de Privacidade', href: '/privacidade' },
+  { label: 'Termos de Uso', href: '/termos' },
+]
 
 export function Footer() {
-  const currentYear = new Date().getFullYear();
-
   return (
-    <footer className="bg-nexen-navy text-white">
+    <footer className="bg-navy border-t border-white/5">
       <Container>
-        <div className="py-12 md:py-16">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
-            {/* Brand */}
-            <div className="col-span-1 md:col-span-2">
-              <div className="relative h-10 w-32 mb-4">
-                <Image
-                  src="/brand/logo.png"
-                  alt="Nexen"
-                  fill
-                  className="object-contain brightness-0 invert"
-                />
-              </div>
-              <p className="text-white/70 text-sm max-w-md mb-6">
-                Soluções em automação de processos, integrações de sistemas e consultoria técnica. 
-                Transformando desafios tecnológicos em oportunidades de crescimento.
-              </p>
-              <div className="flex items-center space-x-4">
-                {company.social.linkedin && (
-                  <a
-                    href={company.social.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-white/70 hover:text-nexen-cyan transition-colors"
-                    aria-label="LinkedIn"
-                  >
-                    <Linkedin className="w-5 h-5" />
-                  </a>
-                )}
-                {company.social.instagram && (
-                  <a
-                    href={company.social.instagram}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-white/70 hover:text-nexen-cyan transition-colors"
-                    aria-label="Instagram"
-                  >
-                    <Instagram className="w-5 h-5" />
-                  </a>
-                )}
-              </div>
-            </div>
-
-            {/* Links */}
-            <div>
-              <h4 className="font-semibold mb-4">Links</h4>
-              <ul className="space-y-2">
-                <li>
-                  <a href="#servicos" className="text-white/70 hover:text-white text-sm transition-colors">
-                    Serviços
-                  </a>
-                </li>
-                <li>
-                  <a href="#processo" className="text-white/70 hover:text-white text-sm transition-colors">
-                    Processo
-                  </a>
-                </li>
-                <li>
-                  <a href="#diferenciais" className="text-white/70 hover:text-white text-sm transition-colors">
-                    Diferenciais
-                  </a>
-                </li>
-                <li>
-                  <a href="#contato" className="text-white/70 hover:text-white text-sm transition-colors">
-                    Contato
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            {/* Contact */}
-            <div>
-              <h4 className="font-semibold mb-4">Contato</h4>
-              <ul className="space-y-3">
-                <li>
-                  <a
-                    href={`mailto:${company.contact.email}`}
-                    className="text-white/70 hover:text-white text-sm transition-colors flex items-center space-x-2"
-                  >
-                    <Mail className="w-4 h-4" />
-                    <span>{company.contact.email}</span>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href={`tel:${company.contact.phone}`}
-                    className="text-white/70 hover:text-white text-sm transition-colors flex items-center space-x-2"
-                  >
-                    <Phone className="w-4 h-4" />
-                    <span>{company.contact.phone}</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
+        <div className="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+          {/* Brand */}
+          <div className="lg:col-span-1">
+            <Image
+              src="/brand/logo.png"
+              alt="Nexen Tecnologia"
+              width={140}
+              height={38}
+              className="h-8 w-auto mb-4"
+            />
+            <p className="text-sm text-white/50 leading-relaxed">
+              Automação, integrações e inteligência artificial sob medida para o seu negócio.
+            </p>
           </div>
 
-          {/* Bottom */}
-          <div className="mt-12 pt-8 border-t border-white/10">
-            <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-              <p className="text-white/60 text-sm">
-                © {currentYear} {company.legalName}. Todos os direitos reservados.
-              </p>
-              <div className="flex items-center space-x-6">
-                <Link
-                  href="/privacidade"
-                  className="text-white/60 hover:text-white text-sm transition-colors"
+          {/* Navigation */}
+          <div>
+            <h4 className="text-sm font-semibold text-white mb-4">Navegação</h4>
+            <ul className="space-y-2.5">
+              {footerLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-white/50 hover:text-white transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h4 className="text-sm font-semibold text-white mb-4">Contato</h4>
+            <ul className="space-y-3">
+              <li>
+                <a
+                  href={`https://wa.me/${company.contact.whatsapp}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-sm text-white/50 hover:text-white transition-colors"
                 >
-                  Privacidade
-                </Link>
-                <Link
-                  href="/termos"
-                  className="text-white/60 hover:text-white text-sm transition-colors"
+                  <WhatsAppIcon className="w-4 h-4" />
+                  {company.contact.whatsappFormatted}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`mailto:${company.contact.email}`}
+                  className="flex items-center gap-2 text-sm text-white/50 hover:text-white transition-colors"
                 >
-                  Termos de Uso
-                </Link>
-              </div>
+                  <MailIcon className="w-4 h-4" />
+                  {company.contact.email}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={company.social.instagramUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-sm text-white/50 hover:text-white transition-colors"
+                >
+                  <InstagramIcon className="w-4 h-4" />
+                  {company.social.instagram}
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Legal + Company Data */}
+          <div>
+            <h4 className="text-sm font-semibold text-white mb-4">Legal</h4>
+            <ul className="space-y-2.5">
+              {legalLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-white/50 hover:text-white transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <div className="mt-6 space-y-1.5 text-xs text-white/30">
+              <p>{company.legalName}</p>
+              <p>CNPJ: {company.cnpj}</p>
+              <p>CNAE: {company.cnae}</p>
+              <p>{company.address.full}</p>
             </div>
           </div>
         </div>
+
+        {/* Bottom */}
+        <div className="border-t border-white/5 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-xs text-white/30">
+            &copy; {new Date().getFullYear()} {company.name}. Todos os direitos reservados.
+          </p>
+          <p className="text-xs text-white/30">
+            {company.address.city}, {company.address.state}
+          </p>
+        </div>
       </Container>
     </footer>
-  );
+  )
 }

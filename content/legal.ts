@@ -1,145 +1,104 @@
-import { company } from "./company";
-
-export const privacyPolicy = {
-  title: "Política de Privacidade",
-  lastUpdate: "15 de fevereiro de 2026",
-  sections: [
-    {
-      title: "1. Introdução",
-      content: `Esta Política de Privacidade descreve como ${company.tradeName} ("nós", "nosso" ou "empresa") coleta, usa e protege as informações pessoais dos usuários de nosso site e serviços.`
-    },
-    {
-      title: "2. Informações que Coletamos",
-      content: `Coletamos as seguintes informações:
-      
-- **Informações fornecidas voluntariamente**: Nome, e-mail, telefone e mensagens enviadas através de formulários de contato.
-- **Informações de navegação**: Endereço IP, tipo de navegador, páginas visitadas e tempo de permanência (através de cookies e ferramentas de análise).
-- **Informações de contato comercial**: Dados empresariais compartilhados durante negociações ou prestação de serviços.`
-    },
-    {
-      title: "3. Como Usamos suas Informações",
-      content: `Utilizamos suas informações para:
-
-- Responder solicitações e dúvidas enviadas através de formulários de contato.
-- Prestar serviços contratados e manter comunicação sobre projetos em andamento.
-- Enviar informações sobre nossos serviços (apenas se você consentir).
-- Melhorar a experiência de navegação no site através de análises estatísticas.
-- Cumprir obrigações legais e contratuais.`
-    },
-    {
-      title: "4. Cookies",
-      content: `Nosso site utiliza cookies para:
-
-- **Cookies essenciais**: Garantir o funcionamento básico do site.
-- **Cookies analíticos**: Entender como os visitantes interagem com o site (Google Analytics ou similar).
-
-Você pode desabilitar cookies nas configurações do seu navegador, mas isso pode afetar a funcionalidade do site.`
-    },
-    {
-      title: "5. Compartilhamento de Dados",
-      content: `Não vendemos, alugamos ou compartilhamos suas informações pessoais com terceiros, exceto:
-
-- Quando necessário para prestação de serviços contratados (ex: fornecedores de hospedagem).
-- Para cumprir obrigações legais ou ordens judiciais.
-- Com seu consentimento explícito.`
-    },
-    {
-      title: "6. Segurança",
-      content: `Adotamos medidas técnicas e organizacionais para proteger seus dados contra acesso não autorizado, perda ou alteração. No entanto, nenhum sistema é 100% seguro e não podemos garantir segurança absoluta.`
-    },
-    {
-      title: "7. Seus Direitos (LGPD)",
-      content: `De acordo com a Lei Geral de Proteção de Dados (LGPD), você tem direito a:
-
-- Acessar seus dados pessoais que possuímos.
-- Corrigir dados incompletos ou desatualizados.
-- Solicitar a exclusão de seus dados (quando aplicável).
-- Revogar consentimento para uso de dados.
-- Portabilidade de dados para outro fornecedor.
-
-Para exercer esses direitos, entre em contato através de ${company.contact.email}.`
-    },
-    {
-      title: "8. Retenção de Dados",
-      content: `Mantemos suas informações apenas pelo tempo necessário para as finalidades descritas nesta política, ou conforme exigido por lei.`
-    },
-    {
-      title: "9. Alterações nesta Política",
-      content: `Podemos atualizar esta Política de Privacidade periodicamente. A versão mais recente estará sempre disponível nesta página, com a data da última atualização.`
-    },
-    {
-      title: "10. Contato",
-      content: `Para dúvidas sobre esta política ou sobre como tratamos seus dados, entre em contato:
-
-**${company.legalName}**  
-E-mail: ${company.contact.email}  
-Endereço: ${company.address.street}, ${company.address.city} - ${company.address.state}, ${company.address.cep}`
-    }
-  ]
-};
-
-export const termsOfUse = {
-  title: "Termos de Uso",
-  lastUpdate: "15 de fevereiro de 2026",
-  sections: [
-    {
-      title: "1. Aceitação dos Termos",
-      content: `Ao acessar e usar este site, você concorda com estes Termos de Uso. Se não concordar com qualquer parte destes termos, não utilize nosso site.`
-    },
-    {
-      title: "2. Descrição dos Serviços",
-      content: `${company.tradeName} oferece serviços de automação de processos, integrações de sistemas e consultoria técnica. Este site tem caráter informativo e serve como canal de contato inicial.`
-    },
-    {
-      title: "3. Uso Adequado",
-      content: `Você concorda em usar este site apenas para fins lícitos e de acordo com estes termos. É proibido:
-
-- Violar leis ou regulamentos aplicáveis.
-- Tentar acessar áreas restritas do site sem autorização.
-- Transmitir vírus, malware ou códigos maliciosos.
-- Fazer uso comercial não autorizado do conteúdo.
-- Realizar web scraping ou coleta automatizada de dados.`
-    },
-    {
-      title: "4. Propriedade Intelectual",
-      content: `Todo o conteúdo deste site (textos, imagens, logos, código) é propriedade de ${company.legalName} ou de seus licenciadores, protegido por leis de direitos autorais.
-
-Você não pode copiar, reproduzir, distribuir ou criar trabalhos derivados sem autorização expressa por escrito.`
-    },
-    {
-      title: "5. Limitação de Responsabilidade",
-      content: `${company.tradeName} não se responsabiliza por:
-
-- Interrupções temporárias ou erros no site.
-- Decisões tomadas com base em informações do site.
-- Danos indiretos, incidentais ou consequentes relacionados ao uso do site.
-- Conteúdo de links externos (não controlamos sites de terceiros).
-
-As informações do site são fornecidas "como estão", sem garantias de qualquer tipo.`
-    },
-    {
-      title: "6. Links para Sites Externos",
-      content: `Este site pode conter links para sites de terceiros. Não somos responsáveis pelo conteúdo ou práticas de privacidade desses sites.`
-    },
-    {
-      title: "7. Contratação de Serviços",
-      content: `A contratação de serviços da ${company.tradeName} está sujeita a acordo comercial específico, com termos e condições próprios que serão fornecidos durante o processo de negociação.`
-    },
-    {
-      title: "8. Alterações nos Termos",
-      content: `Reservamo-nos o direito de modificar estes Termos de Uso a qualquer momento. Alterações entram em vigor imediatamente após publicação nesta página.`
-    },
-    {
-      title: "9. Lei Aplicável",
-      content: `Estes termos são regidos pelas leis da República Federativa do Brasil. Quaisquer disputas serão submetidas ao foro da comarca de ${company.address.city} - ${company.address.state}.`
-    },
-    {
-      title: "10. Contato",
-      content: `Para dúvidas sobre estes Termos de Uso, entre em contato:
-
-**${company.legalName}**  
-E-mail: ${company.contact.email}  
-Endereço: ${company.address.street}, ${company.address.city} - ${company.address.state}, ${company.address.cep}`
-    }
-  ]
-};
+export const legal = {
+  privacy: {
+    title: 'Política de Privacidade',
+    lastUpdated: '15 de setembro de 2025',
+    sections: [
+      {
+        title: '1. Informações Gerais',
+        content:
+          'A Nexen Tecnologia LTDA ("Nexen", "nós"), inscrita no CNPJ 62.710.896/0001-50, com sede em Brasília-DF, é responsável pelo tratamento dos dados pessoais coletados por meio deste site. Esta Política de Privacidade foi elaborada em conformidade com a Lei Geral de Proteção de Dados Pessoais (Lei nº 13.709/2018 — LGPD).',
+      },
+      {
+        title: '2. Dados Coletados',
+        content:
+          'Podemos coletar os seguintes dados pessoais:\n\n• Dados de identificação: nome, e-mail, telefone e empresa, fornecidos voluntariamente ao entrar em contato conosco.\n• Dados de navegação: endereço IP, tipo de navegador, páginas visitadas, tempo de permanência e cookies, coletados automaticamente durante o uso do site.',
+      },
+      {
+        title: '3. Finalidade do Tratamento',
+        content:
+          'Os dados pessoais são tratados para as seguintes finalidades:\n\n• Responder a solicitações de contato e orçamento.\n• Melhorar a experiência de navegação no site.\n• Enviar comunicações relacionadas aos nossos serviços, caso autorizado.\n• Cumprir obrigações legais e regulatórias.',
+      },
+      {
+        title: '4. Compartilhamento de Dados',
+        content:
+          'Não vendemos, alugamos ou compartilhamos seus dados pessoais com terceiros para fins comerciais. Os dados podem ser compartilhados apenas com:\n\n• Prestadores de serviço essenciais ao funcionamento do site (hospedagem, análise).\n• Autoridades competentes, quando exigido por lei.',
+      },
+      {
+        title: '5. Armazenamento e Segurança',
+        content:
+          'Os dados são armazenados em servidores seguros com medidas técnicas e administrativas adequadas para proteger contra acesso não autorizado, perda ou destruição. Mantemos os dados apenas pelo tempo necessário para cumprir as finalidades descritas.',
+      },
+      {
+        title: '6. Direitos do Titular',
+        content:
+          'Conforme a LGPD, você tem direito a:\n\n• Confirmar a existência de tratamento de dados.\n• Acessar seus dados pessoais.\n• Corrigir dados incompletos ou desatualizados.\n• Solicitar a anonimização, bloqueio ou eliminação de dados desnecessários.\n• Revogar o consentimento a qualquer momento.\n\nPara exercer seus direitos, entre em contato pelo e-mail contato@nexentecnologia.com.br.',
+      },
+      {
+        title: '7. Cookies',
+        content:
+          'Este site utiliza cookies para melhorar a experiência de navegação. Cookies são pequenos arquivos armazenados no seu dispositivo. Você pode configurar seu navegador para recusar cookies, mas isso pode afetar a funcionalidade do site.',
+      },
+      {
+        title: '8. Alterações nesta Política',
+        content:
+          'Podemos atualizar esta Política de Privacidade periodicamente. Recomendamos que consulte esta página regularmente. A data da última atualização está indicada no topo do documento.',
+      },
+      {
+        title: '9. Contato',
+        content:
+          'Para dúvidas sobre esta política ou sobre o tratamento de seus dados, entre em contato:\n\nNexen Tecnologia LTDA\nE-mail: contato@nexentecnologia.com.br\nEndereço: Q AOS 5 BLOCO C, Brasília, DF 70660-053',
+      },
+    ],
+  },
+  terms: {
+    title: 'Termos de Uso',
+    lastUpdated: '15 de setembro de 2025',
+    sections: [
+      {
+        title: '1. Aceitação dos Termos',
+        content:
+          'Ao acessar e utilizar o site da Nexen Tecnologia LTDA ("Nexen"), você concorda com estes Termos de Uso. Se não concordar com alguma condição, recomendamos que não utilize o site.',
+      },
+      {
+        title: '2. Descrição dos Serviços',
+        content:
+          'A Nexen oferece serviços de automação de processos, integrações de sistemas, desenvolvimento de agentes de IA e criação de sites e landing pages. As informações apresentadas neste site têm caráter informativo e não constituem oferta vinculante.',
+      },
+      {
+        title: '3. Propriedade Intelectual',
+        content:
+          'Todo o conteúdo deste site — incluindo textos, imagens, logotipos, design e código — é de propriedade da Nexen Tecnologia LTDA ou de seus licenciantes, protegido pela legislação brasileira de direitos autorais e propriedade industrial. É proibida a reprodução, distribuição ou modificação sem autorização prévia.',
+      },
+      {
+        title: '4. Uso Aceitável',
+        content:
+          'Ao utilizar este site, você concorda em:\n\n• Não utilizar o site para fins ilegais ou não autorizados.\n• Não tentar acessar áreas restritas do sistema.\n• Não interferir no funcionamento do site ou de seus servidores.\n• Não coletar dados de outros usuários sem autorização.',
+      },
+      {
+        title: '5. Limitação de Responsabilidade',
+        content:
+          'A Nexen não se responsabiliza por:\n\n• Interrupções temporárias no acesso ao site.\n• Danos decorrentes do uso de informações disponibilizadas no site.\n• Conteúdo de sites de terceiros acessados por meio de links presentes neste site.',
+      },
+      {
+        title: '6. Contratação de Serviços',
+        content:
+          'A contratação de serviços da Nexen é formalizada por meio de propostas e contratos específicos, negociados individualmente. Os termos deste site não substituem condições contratuais específicas.',
+      },
+      {
+        title: '7. Alterações',
+        content:
+          'A Nexen reserva-se o direito de alterar estes Termos de Uso a qualquer momento. As alterações entram em vigor a partir de sua publicação no site.',
+      },
+      {
+        title: '8. Legislação Aplicável',
+        content:
+          'Estes Termos de Uso são regidos pelas leis da República Federativa do Brasil. Para dirimir quaisquer controvérsias, fica eleito o Foro da Circunscrição Especial Judiciária de Brasília-DF.',
+      },
+      {
+        title: '9. Contato',
+        content:
+          'Para dúvidas sobre estes Termos de Uso, entre em contato:\n\nNexen Tecnologia LTDA\nE-mail: contato@nexentecnologia.com.br\nEndereço: Q AOS 5 BLOCO C, Brasília, DF 70660-053',
+      },
+    ],
+  },
+} as const

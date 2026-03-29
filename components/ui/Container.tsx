@@ -1,16 +1,14 @@
-import React from 'react';
-import { cn } from '@/lib/utils';
+import { type ReactNode } from 'react'
 
 interface ContainerProps {
-  children: React.ReactNode;
-  className?: string;
-  as?: 'div' | 'section' | 'article' | 'main';
+  children: ReactNode
+  className?: string
 }
 
-export function Container({ children, className, as: Component = 'div' }: ContainerProps) {
+export function Container({ children, className = '' }: ContainerProps) {
   return (
-    <Component className={cn('container-custom', className)}>
+    <div className={`mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 ${className}`}>
       {children}
-    </Component>
-  );
+    </div>
+  )
 }

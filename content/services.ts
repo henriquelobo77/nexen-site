@@ -1,62 +1,62 @@
-export const services = [
+export interface Service {
+  id: string
+  title: string
+  description: string
+  features: string[]
+  icon: 'cog' | 'link' | 'bot' | 'globe'
+}
+
+export const services: Service[] = [
   {
-    id: "automacao",
-    title: "Automação de Processos",
-    description: "Transforme tarefas repetitivas em processos automatizados, economizando tempo e reduzindo erros operacionais.",
+    id: 'automacao',
+    title: 'Automação de Processos',
+    description:
+      'Workflows inteligentes, RPA, dashboards e KPIs automatizados. Eliminamos tarefas manuais repetitivas.',
     features: [
-      "RPA (Robotic Process Automation)",
-      "Workflows inteligentes",
-      "Automação de relatórios",
-      "Integração com sistemas legados"
+      'Workflows automatizados com n8n e Make',
+      'Dashboards e KPIs em tempo real',
+      'RPA para tarefas repetitivas',
+      'Integração com ferramentas existentes',
     ],
-    icon: "workflow"
+    icon: 'cog',
   },
   {
-    id: "integracoes",
-    title: "Integrações de Sistemas",
-    description: "Conecte seus sistemas e plataformas para que trabalhem em sincronia, eliminando retrabalho e dados duplicados.",
+    id: 'integracoes',
+    title: 'Integrações de Sistemas',
+    description:
+      'Conexão entre ferramentas via APIs, webhooks e middleware. Seus sistemas conversam entre si sem retrabalho.',
     features: [
-      "APIs REST e GraphQL",
-      "Webhooks e eventos",
-      "Sincronização de dados",
-      "Middlewares personalizados"
+      'Conexão via APIs e webhooks',
+      'Middleware personalizado',
+      'Sincronização de dados em tempo real',
+      'Eliminação de retrabalho manual',
     ],
-    icon: "plug"
+    icon: 'link',
   },
   {
-    id: "business-intelligence",
-    title: "Business Intelligence",
-    description: "Transforme dados brutos em insights acionáveis com dashboards interativos e relatórios automatizados.",
+    id: 'agentes-ia',
+    title: 'Agentes de IA',
+    description:
+      'Atendimento automatizado no WhatsApp, qualificação de leads, agendamento inteligente e escalonamento humano quando necessário.',
     features: [
-      "Dashboards personalizados",
-      "Relatórios automatizados",
-      "Análise de dados em tempo real",
-      "KPIs e métricas estratégicas"
+      'Atendimento 24h no WhatsApp',
+      'Qualificação automática de leads',
+      'Agendamento inteligente',
+      'Escalonamento para humano',
     ],
-    icon: "chart"
+    icon: 'bot',
   },
   {
-    id: "ecommerce",
-    title: "E-commerce & Marketplaces",
-    description: "Integre sua loja virtual com marketplaces, ERPs e sistemas de pagamento para vender mais com menos esforço.",
+    id: 'sites',
+    title: 'Sites & Landing Pages',
+    description:
+      'Sites institucionais e landing pages otimizadas para conversão, com design personalizado.',
     features: [
-      "Integração com marketplaces",
-      "Sincronização de estoque",
-      "Gestão de pedidos unificada",
-      "Automação de precificação"
+      'Design personalizado e responsivo',
+      'Otimizado para conversão',
+      'SEO técnico avançado',
+      'Performance de carregamento rápida',
     ],
-    icon: "shopping-cart"
+    icon: 'globe',
   },
-  {
-    id: "consultoria",
-    title: "Consultoria Técnica",
-    description: "Conte com nossa experiência para desenhar a arquitetura de soluções mais adequada ao seu negócio.",
-    features: [
-      "Arquitetura de soluções",
-      "Auditoria de sistemas",
-      "Otimização de processos",
-      "Planejamento estratégico"
-    ],
-    icon: "lightbulb"
-  }
-] as const;
+]
