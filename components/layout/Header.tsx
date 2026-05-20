@@ -12,6 +12,7 @@ const navLinks = [
   { label: 'Serviços', href: '/#servicos' },
   { label: 'Processo', href: '/#processo' },
   { label: 'Diferenciais', href: '/#diferenciais' },
+  { label: 'Clientes', href: '/#clientes' },
   { label: 'Nexen Beauty', href: '/nexen-beauty' },
   { label: 'Contato', href: '/#contato' },
 ]
