@@ -23,4 +23,18 @@ export const clients: Client[] = [
     ],
     url: 'https://www.instagram.com/hanarestaurantejapones/',
   },
+  {
+    id: 'palomina',
+    name: 'Palomina',
+    description:
+      'A Nexen desenvolveu e mantém o programa de cashback da Palomina: disparos transacionais via WhatsApp e dashboard de métricas para o time de marketing.',
+    logo: '/clients/palomina-logo.png',
+    alt: 'Palomina — cliente Nexen',
+    services: [
+      'Programa de Cashback',
+      'Disparos via WhatsApp',
+      'Dashboard de Métricas',
+    ],
+    url: 'https://www.instagram.com/palominabar/',
+  },
 ]
