@@ -23,9 +23,13 @@ export function Clients() {
 
         <div className="mx-auto grid max-w-4xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {clients.map((client, idx) => {
+            const logoBoxClass =
+              client.logoBg === 'light'
+                ? 'bg-white border border-navy/10'
+                : 'bg-navy'
             const CardInner = (
               <div className="group flex h-full flex-col items-center rounded-2xl border border-navy/8 bg-white p-8 text-center transition-all duration-300 hover:border-cyan/30 hover:shadow-xl hover:-translate-y-1">
-                <div className="mb-5 flex h-24 w-24 items-center justify-center overflow-hidden rounded-xl bg-navy">
+                <div className={`mb-5 flex h-24 w-24 items-center justify-center overflow-hidden rounded-xl ${logoBoxClass}`}>
                   <Image
                     src={client.logo}
                     alt={client.alt}

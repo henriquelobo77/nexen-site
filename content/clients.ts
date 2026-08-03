@@ -6,6 +6,8 @@ export interface Client {
   alt: string
   services: string[]
   url?: string
+  /** Fundo da caixa da logo. 'navy' (padrão) para logos de tinta clara; 'light' para logos de tinta escura. */
+  logoBg?: 'navy' | 'light'
 }
 
 export const clients: Client[] = [
@@ -36,5 +38,46 @@ export const clients: Client[] = [
       'Dashboard de Métricas',
     ],
     url: 'https://www.instagram.com/palominabar/',
+  },
+  {
+    id: 'pontual',
+    name: 'Pontual Bistrô',
+    description:
+      'A Nexen desenvolveu e mantém o programa de cashback do Pontual Bistrô: disparos transacionais via WhatsApp e dashboard de métricas para o time de marketing.',
+    logo: '/clients/pontual-logo.png',
+    alt: 'Pontual Bistrô — cliente Nexen',
+    services: [
+      'Programa de Cashback',
+      'Disparos via WhatsApp',
+      'Dashboard de Métricas',
+    ],
+    logoBg: 'light',
+  },
+  {
+    id: 'blas',
+    name: 'Blas Cozinha Criativa',
+    description:
+      'A Nexen desenvolveu e mantém o programa de cashback da Blas Cozinha Criativa: disparos transacionais via WhatsApp e dashboard de métricas para o time de marketing.',
+    logo: '/clients/blas-logo.png',
+    alt: 'Blas Cozinha Criativa — cliente Nexen',
+    services: [
+      'Programa de Cashback',
+      'Disparos via WhatsApp',
+      'Dashboard de Métricas',
+    ],
+    logoBg: 'light',
+  },
+  {
+    id: 'opera-mix',
+    name: 'Ópera Mix',
+    description:
+      'A Nexen desenvolveu e mantém o programa de cashback da Ópera Mix: disparos transacionais via WhatsApp e dashboard de métricas para o time de marketing.',
+    logo: '/clients/opera-mix-logo.png',
+    alt: 'Ópera Mix — cliente Nexen',
+    services: [
+      'Programa de Cashback',
+      'Disparos via WhatsApp',
+      'Dashboard de Métricas',
+    ],
   },
 ]
