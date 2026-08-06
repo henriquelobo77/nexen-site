@@ -80,4 +80,17 @@ export const clients: Client[] = [
       'Dashboard de Métricas',
     ],
   },
+  {
+    id: 'ammo-burger',
+    name: 'Ammo Burger',
+    description:
+      'A Nexen desenvolveu e mantém o programa de cashback da Ammo Burger: disparos transacionais via WhatsApp e dashboard de métricas para o time de marketing.',
+    logo: '/clients/ammo-burger-logo.png',
+    alt: 'Ammo Burger — cliente Nexen',
+    services: [
+      'Programa de Cashback',
+      'Disparos via WhatsApp',
+      'Dashboard de Métricas',
+    ],
+  },
 ]
