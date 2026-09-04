@@ -24,9 +24,4 @@ export const seo = {
     description:
       'Termos de Uso da Nexen Tecnologia. Condições gerais para utilização dos nossos serviços e site.',
   },
-  nexenBeauty: {
-    title: 'Nexen Beauty |Agente de IA para Salões de Beleza',
-    description:
-      'Atendimento inteligente no WhatsApp para salões de beleza. Agendamento automático, respostas 24h e gestão integrada.',
-  },
 } as const

@@ -8,7 +8,7 @@ const footerLinks = [
   { label: 'Serviços', href: '/#servicos' },
   { label: 'Processo', href: '/#processo' },
   { label: 'Diferenciais', href: '/#diferenciais' },
-  { label: 'Nexen Beauty', href: '/nexen-beauty' },
+  { label: 'Clientes', href: '/#clientes' },
   { label: 'Contato', href: '/#contato' },
 ]
 
